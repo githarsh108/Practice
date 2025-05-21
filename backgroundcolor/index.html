@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background changert</title>
+</head>
+<style>
+body{
+    background-color: aquamarine;
+}
+</style>
+<body>
+    <button class="colorchange">Change Color</button>
+</body>
+
+<script>
+    const colorElem = document.querySelector('.colorchange')
+    console.log(colorElem);
+    let currIndex= 0
+
+    let color = ["GREEN", "BLUE", "RED", "YELLOW", "ORANGE"]
+
+    colorElem.addEventListener('click',function(){
+
+        document.body.style.backgroundColor = color[currIndex]
+        currIndex = (currIndex + 1)%color.length;
+    
+        
+    })
+
+    
+</script>
+</html>

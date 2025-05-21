@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK</title>
+</head>
+
+<body>
+    <h1 class="button"></h1>
+</body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<script>
+    const date = document.querySelector('.button')
+    function updateTime() {
+        dateGen = new Date().toLocaleTimeString()
+        date.innerHTML = dateGen
+    }
+    updateTime();
+    setInterval(updateTime, 1000)
+
+
+    let colorchangerElem = document.querySelector('.colorChanger')
+    function getRandomColor() {
+        let letter = "0123456789ABCDEF"
+        let color = "#"
+        for (let i = 0; i < 6; i++) {
+            color = color + letter[Math.floor(Math.random() * 16)];
+        }
+        return color
+    }
+
+
+    
+        setInterval(function () {
+            document.body.style.backgroundColor = getRandomColor()
+        }, 1000)
+     
+</script>
+
+</html>
